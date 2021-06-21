@@ -78,14 +78,19 @@ public class Metods {
                 break;
             case 3:
                 System.out.println("день недели :" + " " + dayOfWeek + " "+"Вторник");
+                break;
             case 4:
                 System.out.println("день недели :" + " " + dayOfWeek +" "+ "Среда");
+                break;
             case 5:
                 System.out.println("день недели :" + " " + dayOfWeek +" "+ "Четверг");
+                break;
             case 6:
                 System.out.println("день недели :" + " " + dayOfWeek +" "+ "Пятница");
+                break;
             case 7:
                 System.out.println("день недели :" + " " + dayOfWeek + " "+"Субота");
+                break;
 
 
         }
