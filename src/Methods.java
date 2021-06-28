@@ -24,8 +24,7 @@ public class Methods {
     static double fraction() {
         Scanner input = new Scanner(System.in);
         System.out.println("вводите дробное число с клавиатуры ");
-        double fraction = input.nextDouble();
-        return fraction;
+        return input.nextDouble();
     }
 
     static int pow() {
@@ -50,6 +49,7 @@ public class Methods {
         Scanner meanThree = new Scanner(System.in);
         System.out.println("введите три числа для для  подсчета среднеарифметического ");
         double a = meanThree.nextInt();
+
         double b = meanThree.nextInt();
         double c = meanThree.nextInt();
         double meanThrees = (a + b + c) / 3;

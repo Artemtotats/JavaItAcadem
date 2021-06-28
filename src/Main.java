@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        for (int i = 1; i <= 10; i++) {
+        for (; ; ) {
             System.out.println("Вабери метод 1-10, (0-вызод из программы)");
             switch (scanner.nextInt()) {
                 case 1:
@@ -15,6 +15,7 @@ public class Main {
                     break;
                 case 2:
                     Methods.evan();
+
                     break;
                 case 3:
                     Methods.dayOffTheWeek();
