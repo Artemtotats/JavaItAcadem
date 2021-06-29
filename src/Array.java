@@ -37,6 +37,15 @@ public class Array {
         return array;
     }
 
+    public static int[] masA(int[] mas) {
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > i) {
+                System.out.println(mas[i]);
+            }
+        }
+        return mas;
+    }
+
 
     public static int[][] maxNumber(int[][] mas) {
         int max = 0;
