@@ -2,8 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array {
-    public static void main(String[] args) {
-        String[] strings = new String[7];
+    public static String[] daysOfWeek(String[] strings) {
         strings[0] = "Воскресенье";
         strings[1] = "Понедельник";
         strings[2] = "Вторник";
@@ -12,8 +11,10 @@ public class Array {
         strings[5] = "Пятница";
         strings[6] = "Суббота";
         System.out.println(strings[6]);
+        return strings;
+    }
 
-        int numbers[] = {1, 2, 6, 8, 5, 9, 11};
+    public static int[] minMiddlingArithmetic(int[] numbers) {
         int sum = 0;
         for (int number : numbers) {
             sum = (sum + number);
@@ -22,31 +23,22 @@ public class Array {
 
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] < sum) {
-                System.out.println(numbers[i]);
+                System.out.println(numbers[i] + " элементы массива  меньше ср.ариф");
             }
         }
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("введите длинну массива");
-        int size = scanner.nextInt();
+        return numbers;
+    }
 
-        int array[] = new int[size];
-        System.out.println("заполните массив");
-        for (int i = 0; i < size - 1; i++) {
-            array[i] = scanner.nextInt();
-
+    public static int[] insertNumber(int[] array, int index, int value) {
+        for (int i = array.length; i > index; i--) {
+            array[i] = array[i - 1];
         }
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-        System.out.println("заполните значение в массив");
-        for (int j = 0; j == size + 1; j++) {
-            array[j] = scanner.nextInt();
-            System.out.println(array[j]);
+        array[index] = value;
+        return array;
+    }
 
 
-        }
-
-        int mas[][] = {{4, 5, 9, 6}, {6, 8, 9, 4}};
+    public static int[][] maxNumber(int[][] mas) {
         int max = 0;
         int x = 0;
         int y = 0;
@@ -62,7 +54,7 @@ public class Array {
             }
         }
         System.out.println("max:" + max + "\nindexi: i=" + x + " j=" + y);
-
+        return mas;
     }
-
 }
+
