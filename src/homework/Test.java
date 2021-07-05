@@ -21,9 +21,13 @@ public class Test {
         buyers[3] = buyer4;
         for (int i = 0; i < buyers.length; i++) {
             if (buyers[i].getIdCard() % 10 == 1) {
-                System.out.println(buyers[i].getIdCard()+" "+buyers[i].getName());
+                System.out.println(buyers[i].getIdCard() + " " + buyers[i].getName());
 
             }
         }
+
+        CashMachine cashMachine = new CashMachine(12, 16, 20);
+        CashMachine.takeAwayMoney(10,13,17,4);
+        CashMachine.addMoney(1,3,5,3,5,6);
     }
 }

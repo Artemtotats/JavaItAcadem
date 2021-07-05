@@ -1,4 +1,5 @@
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -107,11 +108,50 @@ public class Methods {
     public static int sum(int n) {
         int sum = 0;
         if (n <= 1) {
-            System.out.println("Введенное щначение должно быть больше 0");
+            System.out.println("Введенное значение должно быть больше 0");
         }
         for (int i = 0; i <= n; i++) sum = sum + i;
         System.out.println("Сумма чисел равна:" + " " + sum);
         return sum;
     }
 
+
+    public static void compareString(String srt) {
+        System.out.println(srt);
+        System.out.println(srt.endsWith("!!!"));
+        System.out.println(srt.startsWith("I like"));
+        System.out.println(srt.contains("java"));
+        System.out.println(("IndexOf = ") + srt.indexOf("java"));
+        System.out.println(srt.replace('a', 'o'));
+        System.out.println(srt.toUpperCase());
+        System.out.println(srt.toLowerCase());
+        System.out.println(srt.substring(7));
+
+    }
+
+    public static void commaString(String srt) {
+        int n = 0;
+        char symbol;
+        for (int i = 0; i < srt.length(); i++) {
+            symbol = srt.charAt(i);
+            if (symbol == ',') {
+                n++;
+
+            }
+        }
+        System.out.println("Есть " + n + " запятых");
+    }
+    public static void mergerLetters(String sentence) {
+        sentence = sentence.replaceAll("[!.,:;-]", "");
+
+        String[] words = sentence.split(" ");
+        StringBuilder newSentence = new StringBuilder();
+
+        for(String word : words) {
+            newSentence.append(word.charAt(word.length()-1));
+        }
+
+        System.out.println(newSentence);
+    }
 }
+

@@ -1,7 +1,10 @@
 package homework;
 
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+
 public class Buyer {
-    private static int YEAR = 2021;
+    int year = ZonedDateTime.now().getYear();
     private String surName;
     private String name;
     private String patronymic;
@@ -66,16 +69,9 @@ public class Buyer {
         this.idBank = idBank;
     }
 
-    public static int getYEAR() {
-        return YEAR;
-    }
-
-    public static void setYEAR(int YEAR) {
-        Buyer.YEAR = YEAR;
-    }
 
     public void buyerInfo() {
-        System.out.println("Имя: " + name + " " + "Фамилия: " + surName + " Возраст: " + (YEAR - yearOfBirth) +
+        System.out.println("Имя: " + name + " " + "Фамилия: " + surName + " Возраст: " + (  year - yearOfBirth) +
                 " отчество: " + " " + patronymic + " " + " номер карты: " + " " + idCard + " " + " номер счета: " + idBank);
 
     }
