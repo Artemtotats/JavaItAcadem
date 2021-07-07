@@ -129,26 +129,27 @@ public class Methods {
 
     }
 
-    public static void commaString(String srt) {
+    public static int commaString(String srt) {
         int n = 0;
         char symbol;
         for (int i = 0; i < srt.length(); i++) {
             symbol = srt.charAt(i);
             if (symbol == ',') {
                 n++;
-
             }
         }
         System.out.println("Есть " + n + " запятых");
+        return n;
     }
+
     public static void mergerLetters(String sentence) {
         sentence = sentence.replaceAll("[!.,:;-]", "");
 
         String[] words = sentence.split(" ");
         StringBuilder newSentence = new StringBuilder();
 
-        for(String word : words) {
-            newSentence.append(word.charAt(word.length()-1));
+        for (String word : words) {
+            newSentence.append(word.charAt(word.length() - 1));
         }
 
         System.out.println(newSentence);
