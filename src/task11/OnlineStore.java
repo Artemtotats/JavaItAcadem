@@ -9,18 +9,6 @@ public class OnlineStore {
     private String inputLogin;
     private String inputPassword;
 
-    public OnlineStore(String login, String password) {
-        if (login.equals("\\D&\\d")) {
-            try {
-                throw new IOException();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.err.println(" пароль должен содержать хотя ьа одну цифру и буквы латинского алфавита");
-            }
-            this.login = login;
-        }
-        this.password = password;
-    }
 
     public String getLogin() {
         return login;
@@ -54,9 +42,25 @@ public class OnlineStore {
         this.inputPassword = inputPassword;
     }
 
+    public void Registration(String login, String password) {
 
-    public void Authentication(String inputLogin, String inputPassword) {
-        if (!inputLogin.equals(getLogin())||!inputPassword.equals(getPassword())) {
+        if ( getPassword()==("\\D&\\d")) {
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(" пароль должен содержать хотя ьа одну цифру и буквы латинского алфавита");
+            }
+            this.login = login;
+        }
+        this.password = password;
+    }
+
+
+
+
+    public void  Authentication(String inputLogin, String inputPassword) {
+        if (!inputLogin.equals(getLogin()) || !inputPassword.equals(getPassword())) {
             try {
 
                 throw new IllegalArgumentException();
