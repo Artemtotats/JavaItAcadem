@@ -1,5 +1,7 @@
 package task11;
 
+import java.io.IOException;
+
 public class OnlineStore {
     private String login;
     private String password;
@@ -8,7 +10,15 @@ public class OnlineStore {
     private String inputPassword;
 
     public OnlineStore(String login, String password) {
-        this.login = login;
+        if (login.equals("\\D&\\d")) {
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println(" пароль должен содержать хотя ьа одну цифру и буквы латинского алфавита");
+            }
+            this.login = login;
+        }
         this.password = password;
     }
 
@@ -46,23 +56,16 @@ public class OnlineStore {
 
 
     public void Authentication(String inputLogin, String inputPassword) {
-        if (!inputLogin.equals(getLogin())) {
+        if (!inputLogin.equals(getLogin())||!inputPassword.equals(getPassword())) {
             try {
 
                 throw new IllegalArgumentException();
 
             } catch (IllegalArgumentException e) {
-                System.err.println("Неверный логин");
+                System.err.println("Неверный логин или пороль");
             }
-            if (!inputPassword.equals(getPassword())) {
-                try {
 
-                    throw new IllegalArgumentException();
 
-                } catch (IllegalArgumentException e) {
-                    System.err.println("Неверный пароль");
-                }
-            }
         }
 
     }
