@@ -1,30 +1,21 @@
 package Task12;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class File {
-    private static void CopyFileBufferedRW() {
-        String test = "12 hello smit";
-        try (FileWriter fw = new FileWriter("text12.txt");
-             BufferedWriter bw = new BufferedWriter(new FileWriter("newText12.txt"))) {
-            for (int i = 0; i < test.length(); i++) {
-                fw.write(test.charAt(i));
-                bw.write(test.charAt(i));
-
-            }
-
-        } catch (IOException ex) {
-            ex.printStackTrace(System.out);
-        }
-
-    }
+class FileCopy {
 
 
     public static void main(String[] args) {
-        CopyFileBufferedRW();
+        try (FileReader fr = new FileReader("C:/foto/javadev/ws/JavaItAcadem/src/Task12/first");
+             FileWriter fw = new FileWriter("C:/foto/javadev/ws/JavaItAcadem/src/Task12/sucond")) {
+            int c = fr.read();
+            while (c != -1) {
+                fw.write(c);
+                c = fr.read();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
-
-
