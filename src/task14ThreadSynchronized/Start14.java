@@ -2,25 +2,26 @@ package task14ThreadSynchronized;
 
 public class Start14 {
     public static void main(String[] args) {
-        ThreadSynchronized t = new ThreadSynchronized();
-        ThreadSynchronized t1 = new ThreadSynchronized();
-        ThreadSynchronized t2 = new ThreadSynchronized();
-        ThreadSynchronized t3 = new ThreadSynchronized();
-        ThreadSynchronized t4 = new ThreadSynchronized();
-        ThreadSynchronized t5 = new ThreadSynchronized();
-        ThreadSynchronized t6 = new ThreadSynchronized();
-        ThreadSynchronized t7= new ThreadSynchronized();
-        ThreadSynchronized t8 = new ThreadSynchronized();
-        ThreadSynchronized t9 = new ThreadSynchronized();
-        t.ThreadSleep();
-        t1.ThreadSleep();
-        t2.ThreadSleep();
-        t3.ThreadSleep();
-        t4.ThreadSleep();
-        t5.ThreadSleep();
-        t6.ThreadSleep();
-        t7.ThreadSleep();
-        t8.ThreadSleep();
-        t9.ThreadSleep();
+        Object lock =new Object();
+        ThreadSynchronized t = new ThreadSynchronized(lock);
+        ThreadSynchronized t1 = new ThreadSynchronized(lock);
+        ThreadSynchronized t2 = new ThreadSynchronized(lock);
+        ThreadSynchronized t3 = new ThreadSynchronized(lock);
+        ThreadSynchronized t4 = new ThreadSynchronized(lock);
+        ThreadSynchronized t5 = new ThreadSynchronized(lock);
+        ThreadSynchronized t6 = new ThreadSynchronized(lock);
+        ThreadSynchronized t7= new ThreadSynchronized(lock);
+        ThreadSynchronized t8 = new ThreadSynchronized(lock);
+        ThreadSynchronized t9 = new ThreadSynchronized(lock);
+        t.start();
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+        t7.start();
+        t8.start();
+        t9.start();
     }
 }

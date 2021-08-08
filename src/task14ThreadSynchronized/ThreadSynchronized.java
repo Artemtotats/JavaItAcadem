@@ -1,9 +1,14 @@
 package task14ThreadSynchronized;
 
 public class ThreadSynchronized extends Thread {
-    private Object lock = new Object();
+    private Object lock;
 
-    public void ThreadSleep() {
+    public ThreadSynchronized(Object lock) {
+        this.lock=lock;
+    }
+
+
+    public void run () {
         synchronized (lock) {
             try {
                 Thread.sleep(2000);
